@@ -7,7 +7,7 @@
 ![Calculator](Calculator.png)
 
 ----
-using CSS, HTML, and JavaScript
+>Using HTML , CSS , JavaScript
 
 ### Project Structure
 
