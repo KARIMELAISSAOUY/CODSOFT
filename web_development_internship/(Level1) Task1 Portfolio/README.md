@@ -4,7 +4,7 @@
 ---
 ## Creating a Portfolio website
 
-![Karim_Portfolio](KARIM PORTFOLIO.png)
+![Karim_Portfolio](karim.png.png)
 
 ----
 
