@@ -1,0 +1,901 @@
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+:root {
+  /* fast declarations*/
+  --color-primary: #AF8552;
+  --color-primary-dark: #996f3c;
+  --color-bg-primary: #030201;
+  --color-bg-secondary: #AF8552;
+  --color-bg-footer: #151511;
+  --color-white: #ffffff;
+  --color-text: #676762;
+  --color-border: #373732;
+  --ff-body: "Space Grotesk", sans-serif;
+  --fs-sm: 1.4rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 2rem;
+  --fs-xl: 2.4rem;
+  --fs-xxl: 3.2rem;
+  --fs-biggest: clamp(3rem, 8vw, 5rem);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --zindex-menu: 1000;
+  --zindex-fixed: 1010;
+  --width-container: 98rem;
+  --height-header: 10rem;
+  --height-header--scroll: 8rem;
+  --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #030201;
+  font-family: var(--ff-body);
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  margin-top: var(--height-header);
+  line-height: 1.2;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+main {
+  overflow: hidden;
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+
+.container {
+  width: 90%;
+  max-width: var(--width-container);
+  margin: auto;
+}
+
+.krm{
+  width: 55px;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section__header {
+  margin: 8rem 0;
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--fs-xl);
+  margin-bottom: 0.5rem;
+}
+
+.section__subtitle {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  position: relative;
+}
+
+.section__subtitle::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 0.5rem;
+  background-color: var(--color-primary);
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.d-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  color: var(--color-white);
+  font-weight: var(--fw-semibold);
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--secondary {
+  background-color: var(--color-white);
+  color: var(--color-bg-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Header */
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+.header {
+  background-color: var(--color-bg-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: var(--height-header);
+  z-index: var(--zindex-menu);
+  transition: var(--transition);
+}
+
+.header--scroll {
+  height: var(--height-header--scroll);
+  box-shadow: var(--box-shadow);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav__brand {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.nav__brand i {
+  color: #ffffff;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 4rem;
+}
+
+.nav__link {
+  transition: var(--transition);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  color: #AF8552;
+  font-weight: 700;
+  border-bottom: 2px solid #AF8552;
+}
+
+.nav__toggle {
+  display: none;
+  font-size: var(--fs-xl);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav__toggle:hover {
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 968px) {
+  .nav__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4rem;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-primary);
+    display: none;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .nav__menu--open {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__brand,
+  .nav__toggle {
+    z-index: var(--zindex-fixed);
+  }
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* -------------------Karim info---------------------*/
+#karim{
+  padding-top: 100px;
+}
+.karim__wrapper {
+ 
+  min-height: calc(100vh - var(--height-header));
+  padding: 5rem 0;
+}
+
+.karim__content {
+  text-align: center;
+}
+
+.karim__title {
+  font-size: var(--fs-biggest);
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.karim__title::after {
+  position: absolute;
+  content: "";
+  background-color: var(--color-primary);
+  width: 10rem;
+  height: 0.5rem;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.karim__description {
+  margin-bottom: 5rem;
+  text-align: justify;
+}
+
+.karim__info {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.karim__info-number {
+  font-size: var(--fs-xxl);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.karim__info-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+}
+
+.hero__img{
+  border: 2px solid #AF8552;
+}
+
+@media screen and (max-width: 968px) {
+  .hero__img {
+    width: 280px;
+    justify-self: center;
+  }
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* ----------------------About----------------------------------*/
+.about__content {
+  max-width: 50rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about__title {
+  font-size: var(--fs-xxl);
+  margin-bottom: 3rem;
+}
+
+.about__description {
+  margin-bottom: 3rem;
+}
+
+.skills {
+  justify-self: center;
+}
+
+.skills__title {
+  font-size: var(--fs-lg);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.skills__content {
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.skills__item {
+  margin-bottom: 1rem;
+}
+
+.skills__subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section__title:hover{
+  color: #AF8552;
+}
+
+
+.skills__item i {
+  color: var(--color-primary);
+}
+
+.skills__subtitle:hover{
+  color: #030201;
+}
+
+.skills__item:hover {
+  color: #ffffff;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1.2;
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* -------------------Qualification----------------------------*/
+.qualification__wrapper {
+  margin-bottom: 5rem;
+}
+
+.qualification__content {
+  row-gap: 5rem;
+}
+
+.qualification__name {
+  display: flex;
+  column-gap: 1rem;
+  font-size: var(--fs-lg);
+  margin-bottom: 5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.qualification__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  margin-bottom: 1rem;
+}
+
+.qualification__description {
+  margin-bottom: 2rem;
+}
+
+.qualification__date {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.qualification__footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: 10rem;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.qualification__footer-text {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  margin-bottom: 2rem;
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* ---------------------Services----------------------------------*/
+.service__card {
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  padding: 5rem 3.5rem;
+  width: 100%;
+  max-width: 30rem;
+  justify-self: center;
+  transition: var(--transition);
+}
+
+.service__card:hover {
+  background-color: var(--color-primary);
+}
+
+.service__card:hover .service__link {
+  color: var(--color-white);
+}
+
+.service__icon {
+  font-size: 3.5rem;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.service__title {
+  font-size: var(--fs-lg);
+  margin-bottom: 3rem;
+}
+
+/* ----------------Projects-----------------------*/
+.project__content {
+  width: 100%;
+  max-width: 30rem;
+  justify-self: center;
+}
+
+.project__img {
+  margin-bottom: 2rem;
+}
+
+.project__title {
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  margin-bottom: 1rem;
+}
+
+.project__description {
+  margin-bottom: 2rem;
+}
+
+.project__link {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.project__link:hover {
+  color: var(--color-primary);
+  column-gap: 1rem;
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* --------------------Testimonials----------------------------*/
+.testimonial__card {
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  padding: 3rem 5rem;
+  width: 100%;
+  max-width: 50rem;
+  text-align: center;
+  justify-self: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial__img {
+  max-width: 10rem;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.testimonial__description {
+  color: var(--color-white);
+  margin-bottom: 3rem;
+}
+
+.testimonial__name {
+  font-size: var(--fs-md);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial__occupation {
+  font-size: var(--fs-sm);
+  color: #ffffff;
+}
+
+.testimonial__wrapper .swiper-wrapper {
+  padding-bottom: 5rem;
+}
+.wht{
+  color: #ffffff;
+}
+.testimonial__wrapper .swiper-pagination-bullets {
+  justify-content: space-around;
+}
+
+.testimonial__wrapper .swiper-pagination-bullet {
+  background-color: var(--color-text);
+  border-radius: 0;
+  width: 3rem;
+  height: 0.5rem;
+}
+
+.testimonial__wrapper .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+}
+
+/* -------------------------Contact-----------------------------------------*/
+.contact__wrapper {
+  border-top: 1px solid var(--color-border);
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.contact__title {
+  font-size: var(--fs-xxl);
+  margin-bottom: 2rem;
+}
+
+.contact__content {
+  max-width: 45rem;
+  margin: auto;
+}
+
+.contact__description {
+  margin-bottom: 2rem;
+}
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+/* -----------------------Footer---------------------------*/
+.footer {
+  background-color: var(--color-bg-footer);
+  padding: 5rem 0;
+  text-decoration: none;
+}
+
+#footerlogo{
+  width: 95px;
+  margin: 0 auto;
+}
+
+.footer-p{
+  padding: 3px 3px;
+  margin: 20px 0;
+  text-align: justify;
+  letter-spacing: 2;
+  color: #ffffff8f;
+}
+.footer__wrapper {
+  border-bottom: 1px solid var(--color-bg-secondary);
+  padding: 5rem 0;
+  gap: 5rem;
+}
+
+.footer__title {
+  font-size: var(--fs-lg);
+  margin-bottom: 2rem;
+}
+
+.footer__content .footer__contact a {
+  text-decoration: none;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer__social-link {
+  font-size: 2rem;
+  color: var(--color-white);
+  transition: var(--transition);
+}
+
+.footer__contact {
+  font-size: var(--fs-lg);
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+  transition: .3s all ease;
+}
+
+.footer__social-link:hover,
+.footer__contact:hover {
+  color: var(--color-primary);
+  transform: scale(2);
+  transition: .3s all ease;
+}
+
+
+.footer__copyright {
+  font-size: var(--fs-sm);
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.footer__copyright:hover{
+   color: #fff;
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+
+::-webkit-scrollbar {
+  width: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-text);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+
+ /* ------------------------ */
+
+@media screen and (min-width: 560px) {
+  .service__wrapper {
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
+  }
+
+  .qualification__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualification__footer {
+    text-align: initial;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .qualification__footer-text {
+    margin: 0;
+  }
+
+  .project__wrapper {
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
+  }
+
+  .footer__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .karim__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .karim__content {
+    text-align: initial;
+  }
+
+  .karim__title::after {
+    transform: none;
+    left: 0;
+  }
+
+  .karim__info {
+    justify-content: initial;
+  }
+
+  .hero__img {
+    justify-self: flex-end;
+  }
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  *//* Large devices */
+
+@media screen and (min-width: 968px) {
+  .about__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__content {
+    margin: 0;
+  }
+
+  .about__content,
+  .skills__title {
+    text-align: initial;
+  }
+
+  .qualification__content,
+  .service__wrapper,
+  .project__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact__content {
+    margin: 0;
+    text-align: initial;
+  }
+
+  .footer__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
+#contact{
+  align-items: center;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+.contact-container {
+  max-width: 839px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-fields {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #af8552;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;  
+}
+.success-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #af8552;
+  color: #fff;
+  border-radius: 5px;
+  display: none;  
+}
+
+.buttons {
+  text-align: right;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #af8552;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+button.clear {
+  background-color: #e0e0e0;
+}
+
+button.delete {
+  background-color: #af8552;
+}
+
+
+ /* My portfolio   */
+ /* coded by karim  */
+ /* task 01  */
