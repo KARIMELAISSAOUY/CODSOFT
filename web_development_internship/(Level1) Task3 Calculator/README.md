@@ -11,9 +11,9 @@
 
 ### Project Structure
 
-The project should have the following structure:
+The project has been developed according to the following structure:
 
-```plaintext
+```calculator app
 /calculator
   ├── index.html
   ├── style.css
